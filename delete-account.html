@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudoku Arena - Account & Data Deletion</title>
+  <style>
+    :root {
+      --bg: #0d141f;
+      --card-bg: #141d2b;
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --accent: #00e6ff;
+      --danger: #ff5a6e;
+      --border: #1e293b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 32px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      background: #090e17;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 3px;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn.active {
+      background: var(--accent);
+      color: #0d141f;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      color: #ffffff;
+      margin-top: 28px;
+      margin-bottom: 12px;
+      border-left: 3px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    p {
+      color: var(--text-main);
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+    }
+
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 16px;
+      color: var(--text-main);
+      font-size: 0.95rem;
+    }
+
+    li { margin-bottom: 8px; }
+
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .step-box {
+      margin: 18px 0;
+      padding: 16px 20px;
+      background: rgba(0, 230, 255, 0.04);
+      border: 1px solid rgba(0, 230, 255, 0.15);
+      border-radius: 10px;
+    }
+
+    .warning-box {
+      margin: 20px 0;
+      padding: 16px 20px;
+      background: rgba(255, 90, 110, 0.08);
+      border: 1px solid rgba(255, 90, 110, 0.3);
+      border-radius: 10px;
+      font-size: 0.9rem;
+      color: #fca5a5;
+    }
+
+    .footer-nav {
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header-bar">
+      <h1 id="page-title">Account & Data Deletion</h1>
+      <div class="lang-switcher">
+        <button type="button" class="lang-btn active" id="btn-en" onclick="setLanguage('en')">English</button>
+        <button type="button" class="lang-btn" id="btn-es" onclick="setLanguage('es')">Español</button>
+      </div>
+    </div>
+
+    <!-- ENGLISH CONTENT -->
+    <div id="content-en">
+      <p>At Sudoku Arena, we respect your right to control your personal data. You can request the permanent deletion of your account and all associated game data at any time.</p>
+
+      <h2>1. How to Request Deletion</h2>
+      <p>You can delete your account using either of the following methods:</p>
+
+      <div class="step-box">
+        <strong>Method A: Inside the App (Instant)</strong>
+        <ol style="margin-top: 8px;">
+          <li>Open <strong>Sudoku Arena</strong> on your device.</li>
+          <li>Tap the menu and open <strong>Settings</strong>.</li>
+          <li>Navigate to the <strong>Account & Progression</strong> section.</li>
+          <li>Select <strong>Delete Account</strong> and hold the button for 2 seconds to confirm.</li>
+        </ol>
+      </div>
+
+      <div class="step-box">
+        <strong>Method B: Web Request (If App is Uninstalled)</strong>
+        <p style="margin-top: 8px;">If you no longer have access to the app, send an email to our support team:</p>
+        <ul>
+          <li><strong>Recipient:</strong> <a href="mailto:sudoarena.privacy@gmail.com?subject=Account%20Deletion%20Request">sudoarena.privacy@gmail.com</a></li>
+          <li><strong>Subject:</strong> Account Deletion Request</li>
+          <li><strong>Required Details:</strong> Your 7-digit Account ID (e.g., <code>1234567</code>) OR the email address tied to your linked Google or Facebook account.</li>
+        </ul>
+      </div>
+
+      <h2>2. What Data Is Deleted?</h2>
+      <p>Upon execution of your request, the following information is permanently removed from our databases:</p>
+      <ul>
+        <li>Account credentials and device identifiers (Device ID, Google ID, Facebook ID).</li>
+        <li>Player profile details (username, custom avatar, color preferences).</li>
+        <li>Gameplay history, Sudoku statistics, puzzle completion records, and monthly rankings.</li>
+        <li>Virtual currencies, VIP progression status, inventory items, and earned trophies.</li>
+      </ul>
+
+      <h2>3. 7-Day Grace Period & Recovery</h2>
+      <p>To prevent accidental loss of progress, deletion requests enter a <strong>7-day grace period</strong> before permanent purging. During these 7 days:</p>
+      <ul>
+        <li>You can cancel the deletion at any time by launching the app and selecting <strong>Restore Account</strong>.</li>
+        <li>Once the 7 days elapse, the deletion becomes irreversible and data cannot be recovered.</li>
+      </ul>
+
+      <div class="warning-box">
+        <strong>Please Note:</strong> Active Google Play subscriptions must be canceled directly through the Google Play Store under <em>Subscriptions</em>, as app developers cannot cancel subscriptions on your behalf.
+      </div>
+    </div>
+
+    <!-- SPANISH CONTENT -->
+    <div id="content-es" class="hidden">
+      <p>En Sudoku Arena respetamos su derecho al control de sus datos personales. Puede solicitar la eliminación permanente de su cuenta y de toda la información asociada en cualquier momento.</p>
+
+      <h2>1. Cómo Solicitar la Eliminación</h2>
+      <p>Puede eliminar su cuenta utilizando cualquiera de los siguientes métodos:</p>
+
+      <div class="step-box">
+        <strong>Método A: Desde la Aplicación (Instantáneo)</strong>
+        <ol style="margin-top: 8px;">
+          <li>Abra <strong>Sudoku Arena</strong> en su dispositivo.</li>
+          <li>Abra el menú lateral y seleccione <strong>Configuración (Settings)</strong>.</li>
+          <li>Vaya a la sección <strong>Cuenta y Progresión</strong>.</li>
+          <li>Seleccione <strong>Eliminar Cuenta</strong> y mantenga presionado el botón por 2 segundos para confirmar.</li>
+        </ol>
+      </div>
+
+      <div class="step-box">
+        <strong>Método B: Solicitud Web (Si desinstaló la app)</strong>
+        <p style="margin-top: 8px;">Si ya no tiene instalada la aplicación, envíe un correo electrónico a nuestro equipo:</p>
+        <ul>
+          <li><strong>Destinatario:</strong> <a href="mailto:sudoarena.privacy@gmail.com?subject=Solicitud%20de%20Eliminacion%20de%20Cuenta">sudoarena.privacy@gmail.com</a></li>
+          <li><strong>Asunto:</strong> Solicitud de Eliminación de Cuenta</li>
+          <li><strong>Datos requeridos:</strong> Su ID de cuenta de 7 dígitos (ej. <code>1234567</code>) O el correo electrónico asociado a su cuenta de Google o Facebook vinculada.</li>
+        </ul>
+      </div>
+
+      <h2>2. ¿Qué Datos Se Eliminan?</h2>
+      <p>Al procesarse la solicitud, los siguientes datos se eliminarán de forma permanente:</p>
+      <ul>
+        <li>Credenciales de cuenta e identificadores (Device ID, Google ID, Facebook ID).</li>
+        <li>Perfil de jugador (nombre de usuario, avatar, paleta de colores).</li>
+        <li>Historial de partidas, estadísticas de Sudoku, desafíos completados y clasificación mensual.</li>
+        <li>Monedas virtuales, estatus VIP, objetos de inventario y trofeos acumulados.</li>
+      </ul>
+
+      <h2>3. Período de Gracia de 7 Días</h2>
+      <p>Para evitar pérdidas accidentales, las solicitudes entran en un <strong>período de gracia de 7 días</strong> antes del borrado definitivo. Durante este período:</p>
+      <ul>
+        <li>Puede cancelar la eliminación abriendo la aplicación y seleccionando <strong>Restaurar Cuenta</strong>.</li>
+        <li>Una vez transcurridos los 7 días, el borrado es irreversible y la información no se puede recuperar.</li>
+      </ul>
+
+      <div class="warning-box">
+        <strong>Aviso Importante:</strong> Las suscripciones activas de Google Play deben cancelarse directamente desde Google Play Store en la sección <em>Suscripciones</em>. Los desarrolladores no pueden cancelarlas en su nombre.
+      </div>
+    </div>
+
+    <div class="footer-nav">
+      <a href="index.html">← Return to Privacy Policy / Volver a la Política de Privacidad</a>
+    </div>
+  </div>
+
+  <script>
+    function setLanguage(lang) {
+      const enContent = document.getElementById('content-en');
+      const esContent = document.getElementById('content-es');
+      const btnEn = document.getElementById('btn-en');
+      const btnEs = document.getElementById('btn-es');
+      const title = document.getElementById('page-title');
+
+      if (lang === 'es') {
+        enContent.classList.add('hidden');
+        esContent.classList.remove('hidden');
+        btnEn.classList.remove('active');
+        btnEs.classList.add('active');
+        title.innerText = 'Eliminación de Cuenta y Datos';
+      } else {
+        esContent.classList.add('hidden');
+        enContent.classList.remove('hidden');
+        btnEs.classList.remove('active');
+        btnEn.classList.add('active');
+        title.innerText = 'Account & Data Deletion';
+      }
+    }
+  </script>
+
+</body>
+</html>
